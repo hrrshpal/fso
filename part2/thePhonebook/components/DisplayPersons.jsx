@@ -1,0 +1,15 @@
+import React from 'react'
+
+const DisplayPersons = ({persons}) => {
+  return (
+    <div>
+        <ul>
+            {
+            persons.map(person => <li key={person.name}>{person.name} : {person.number}</li>)
+            }
+        </ul>
+    </div>
+  )
+}
+
+export default DisplayPersons

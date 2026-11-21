@@ -1,12 +1,9 @@
 import React from 'react'
 
-const Filter = ({filteredArray, handleFilterChange}) => {
+const Filter = ({handleFilterChange}) => {
   return (
     <div>
       <span>filter shown with a </span> <input onChange={handleFilterChange}/>
-      <ul>
-        {filteredArray.map(person => <li key={person.name}>{person.name} : {person.number}</li>)}
-      </ul>
     </div>
   )
 }

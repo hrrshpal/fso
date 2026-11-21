@@ -28,7 +28,7 @@ const App = () => {
 
   function handleFilterChange(e){
     let query = e.target.value;
-    let newarr = persons.filter(person => person.name.toLowerCase()===query.toLowerCase())
+    let newarr = persons.filter(person => person.name.toLowerCase().includes(query.toLowerCase()))
     setFilteredArray(newarr)
   }
 
@@ -47,13 +47,13 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <Filter filteredArray={filteredArray} handleFilterChange={handleFilterChange}/>
+      <Filter handleFilterChange={handleFilterChange}/>
 
       <h3>add a new</h3>
       <PersonForm handleNameChange={handleNameChange} handleNumberChange={handleNumberChange} handleAddBtn={handleAddBtn} />
 
       <h3>Numbers</h3>
-      <DisplayPersons persons={persons}/>
+      <DisplayPersons persons={persons} filteredArray={filteredArray}/>
     </div>
   )
 }
